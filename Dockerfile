@@ -43,8 +43,8 @@ RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubunt
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$KUBERNETES_VERSION/bin/linux/amd64/kubectl
 RUN chmod +x kubectl
 RUN chmod o+x kubectl
+RUN chmod 777 kubectl
 RUN ln -s kubectl /usr/local/bin/kubectl
-RUN chmod 777 /usr/local/bin/kubectl
 
 # gcloud
 RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-183.0.0-linux-x86.tar.gz
