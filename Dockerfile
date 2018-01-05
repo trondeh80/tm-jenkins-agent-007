@@ -44,12 +44,13 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$KUBERNET
 RUN chmod +x kubectl
 RUN chmod o+x kubectl
 RUN ln -s kubectl /usr/local/bin/kubectl
+RUN chmod 777 /usr/local/bin/kubectl
 
 # gcloud
 RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-183.0.0-linux-x86.tar.gz
 RUN tar -zxvf google-cloud-sdk-183.0.0-linux-x86.tar.gz
 RUN ./google-cloud-sdk/install.sh --quiet
-RUN chmod 777 -R ./google-cloud-sdk
+RUN chmod 777 -R google-cloud-sdk
 # RUN ./google-cloud-sdk/bin/gcloud init
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
