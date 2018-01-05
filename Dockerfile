@@ -44,7 +44,8 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$KUBERNET
 RUN chmod +x kubectl
 RUN chmod o+x kubectl
 RUN chmod 777 kubectl
-RUN ln -s kubectl /usr/local/bin/kubectl
+RUN cp kubectl /usr/local/bin/kubectl
+RUN chmod 777 /usr/local/bin/kubectl
 
 # gcloud
 RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-183.0.0-linux-x86.tar.gz
